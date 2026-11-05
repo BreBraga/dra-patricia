@@ -1,0 +1,197 @@
+/* Versão C · O traço
+   Hero coral com o símbolo em creme; o resto da página em linho e areia, petróleo como cor
+   profunda e o coral voltando como faísca. (Antes era laranja; trocado por ser chamativo demais.)
+   Assinatura: o traço original do símbolo se desenha (ao abrir, ao aparecer e com a rolagem). */
+
+@keyframes traco-sobe { from { opacity: .001; transform: translateY(18px) } to { opacity: 1; transform: none } }
+
+.v-traco {
+  --linho: #F7F2EC; --areia: #DFD3C8; --petroleo: #124353;
+  --texto: #12303A; --creme: #FFFBF7; --coral: #E98456; --suave: #5d6f75;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Jost", "Century Gothic", "Segoe UI", sans-serif;
+  --r: 28px; --wrap: 1200px;
+  --mm-fundo: var(--coral); --mm-texto: var(--texto); --mm-destaque: var(--petroleo); --mm-cta-texto: var(--creme);
+  color-scheme: light;
+  min-height: 100vh; background: var(--linho); color: var(--texto); font: 400 17px/1.65 var(--body);
+
+  img { max-width: 100%; display: block }
+  a { color: inherit }
+  :focus-visible { outline: 2px solid var(--petroleo); outline-offset: 3px; border-radius: 6px }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px) }
+  h1, h2, h3 { font-family: var(--display); font-weight: 300; line-height: 1.05; text-wrap: balance; margin: 0; font-variation-settings: "opsz" 144, "SOFT" 50 }
+  h2 { font-size: clamp(36px, 5.4vw, 66px); letter-spacing: -.015em }
+  h2 em { color: var(--coral) }
+  h3 { font-size: 24px; font-weight: 400; font-variation-settings: "opsz" 36, "SOFT" 50 }
+  p { margin: 0 }
+  .lead { font-size: 19px; max-width: 50ch }
+  .eyebrow { font: 500 12px/1 var(--body); letter-spacing: .28em; text-transform: uppercase; color: var(--petroleo); margin: 0 0 20px }
+  section { padding: clamp(80px, 10vw, 136px) 0 }
+
+  .btn { display: inline-flex; align-items: center; padding: 16px 28px; border-radius: 999px; font: 500 15px/1 var(--body); text-decoration: none; transition: transform .2s, background .2s, color .2s }
+  .btn:hover { transform: translateY(-2px) }
+  .btn-creme { background: var(--creme); color: var(--petroleo) }
+  .btn-creme:hover { background: var(--petroleo); color: var(--creme) }
+  .btn-linha { border: 1.5px solid currentColor }
+  .btn-coral { background: var(--coral); color: var(--texto) }
+
+  /* topo sobre o coral */
+  header { position: absolute; inset: 0 0 auto; z-index: 20 }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 92px }
+  .nav .logo img { height: 50px; width: auto }
+  .nav > ul { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; font-size: 15px }
+  .nav > ul a { text-decoration: none; color: rgba(18, 48, 58, .82) }
+  .nav > ul a:hover { color: var(--texto) }
+  @media (max-width: 980px) { .nav > ul { display: none } }
+  @media (max-width: 560px) { .nav .btn { display: none } }
+
+  /* hero */
+  .hero { position: relative; overflow: hidden; background: var(--coral); color: var(--texto); padding: 170px 0 clamp(96px, 12vw, 160px); min-height: min(860px, 100vh) }
+  .hero-simbolo { position: absolute; width: min(66vw, 980px); right: -9vw; bottom: -14%; pointer-events: none }
+  .hero-txt { position: relative; z-index: 1 }
+  .hero .eyebrow { color: var(--texto); opacity: .85 }
+  .hero h1 { font-size: clamp(60px, 10vw, 148px); line-height: .92; letter-spacing: -.035em; max-width: 7.5ch; font-variation-settings: "opsz" 144, "SOFT" 100 }
+  .hero h1 em { font-style: italic; color: var(--creme) }
+  .hero .lead { margin-top: 30px; max-width: 34ch; color: rgba(18, 48, 58, .9) }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px }
+  .hero .eyebrow, .hero h1, .hero .lead, .hero .ctas { animation: traco-sobe .9s cubic-bezier(.2, .7, .2, 1) both }
+  .hero h1 { animation-delay: .1s } .hero .lead { animation-delay: .25s } .hero .ctas { animation-delay: .35s }
+  @media (max-width: 760px) {
+    .hero { padding-top: 140px; min-height: 0 }
+    .hero-simbolo { width: 120vw; right: -48vw; bottom: auto; top: 70px; opacity: .55 }
+  }
+
+
+  /* jornada com o traço na rolagem */
+  .jornada { background: var(--petroleo); color: var(--creme) }
+  .jornada .eyebrow { color: #f6b28f }
+  .jornada h2 em { color: #ff9a6b }
+  .jornada-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: start }
+  .jornada-fixa { position: sticky; top: 64px }
+  .jornada-simbolo { width: min(100%, 460px); margin-top: 40px }
+  .etapas { list-style: none; margin: 0; padding: clamp(80px, 18vh, 180px) 0 clamp(100px, 22vh, 220px); display: grid; gap: clamp(100px, 22vh, 200px) }
+  .etapas li { border-top: 1px solid rgba(255, 251, 247, .2); padding-top: 20px; opacity: clamp(.28, calc(var(--p, 1) * 5.6 - var(--i) + .25), 1); transition: opacity .3s }
+  .etapas small { display: block; font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: #f6b28f; margin-bottom: 10px }
+  .etapas h3 { font-size: clamp(28px, 3vw, 38px); margin-bottom: 10px }
+  .etapas p { color: rgba(255, 251, 247, .8); max-width: 40ch }
+  @media (max-width: 860px) {
+    .jornada-grid { grid-template-columns: 1fr }
+    .jornada-fixa { position: relative; top: 0 }
+    .jornada-simbolo { width: 60%; margin-top: 24px }
+    .etapas { padding: 0; gap: 36px }
+    .etapas li { opacity: 1 }
+  }
+
+  /* sobre */
+  .sobre-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(32px, 6vw, 88px); align-items: start }
+  .retrato { position: relative; aspect-ratio: 4 / 5; border-radius: var(--r); overflow: visible }
+  .retrato .foto { border-radius: var(--r); overflow: hidden }
+  .retrato-selo { position: absolute; width: 34%; right: -8%; bottom: -6%; background: var(--linho); border-radius: 50%; padding: 6% }
+  .sobre .txt { display: grid; gap: 16px; margin-top: 26px; max-width: 58ch }
+  .formacao { margin: 36px 0 0; border-top: 1px solid #e1d6cb }
+  .formacao div { display: grid; grid-template-columns: 140px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid #e1d6cb; font-size: 15.5px }
+  .formacao dt { font-weight: 500; color: var(--petroleo) }
+  @media (max-width: 860px) { .sobre-grid { grid-template-columns: 1fr } .retrato { max-width: 400px } }
+  @media (max-width: 480px) { .formacao div { grid-template-columns: 1fr; gap: 2px } }
+
+  /* serviços como os posts do manual */
+  .servicos { background: var(--areia) }
+  .sv-head { margin-bottom: 44px }
+  .posts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px }
+  .post { position: relative; overflow: hidden; aspect-ratio: 1; border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 8px; text-decoration: none; transition: transform .25s }
+  .post:hover { transform: translateY(-4px) }
+  .post-marca { position: absolute; width: 78%; right: -24%; top: -20%; opacity: .16; transition: transform .6s cubic-bezier(.2, .7, .2, 1) }
+  .post:hover .post-marca { transform: rotate(-6deg) scale(1.05) }
+  .post .tag { position: relative; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; opacity: .8 }
+  .post h3 { position: relative; margin-top: auto; font-size: clamp(22px, 2.1vw, 28px) }
+  .post p { position: relative; font-size: 14.5px; opacity: .85 }
+  .post .mais { position: relative; font-size: 13.5px; font-weight: 500; margin-top: 6px }
+  @media (max-width: 1000px) { .posts { grid-template-columns: repeat(2, 1fr) } }
+  @media (max-width: 480px) { .posts { grid-template-columns: 1fr } .post { aspect-ratio: auto; min-height: 220px } }
+
+  /* consultório */
+  .consult { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(32px, 6vw, 80px); align-items: center }
+  .consult .txt { display: grid; gap: 16px; margin-top: 24px; max-width: 54ch }
+  .galeria { display: grid; grid-template-columns: 1.2fr 1fr; gap: 14px; align-items: end }
+  .galeria > div { position: relative; border-radius: var(--r); overflow: hidden }
+  .galeria > div:first-child { aspect-ratio: 3 / 4 }
+  .galeria > div:last-child { aspect-ratio: 1 }
+  @media (max-width: 860px) { .consult { grid-template-columns: 1fr } }
+
+  /* abordagem: citação em areia (o coral agora é a cor do topo) */
+  .abordagem { padding-top: 0 }
+  .citacao { position: relative; overflow: hidden; background: var(--areia); color: var(--texto); border-radius: var(--r); padding: clamp(36px, 6vw, 80px) }
+  .citacao .eyebrow { color: var(--texto) }
+  .citacao-marca { position: absolute; width: min(56%, 620px); right: -10%; top: -18%; opacity: .14 }
+  .frase { position: relative; font: 300 clamp(44px, 7vw, 100px)/.98 var(--display); letter-spacing: -.03em; max-width: 12ch; font-variation-settings: "opsz" 144, "SOFT" 100 }
+  .frase em { color: var(--coral) }
+  .citacao-cols { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 48px; max-width: 900px }
+  .citacao-cols h3 { margin-bottom: 10px }
+  .citacao-cols p { font-size: 15.5px }
+  @media (max-width: 760px) { .citacao-cols { grid-template-columns: 1fr; gap: 24px } }
+
+  /* depoimentos */
+  .depo { padding-top: 0 }
+  .aviso { display: inline-block; margin-top: 14px; font-size: 12.5px; color: var(--suave); background: var(--creme); padding: 6px 12px; border-radius: 99px }
+  .depo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 40px }
+  .depo figure { margin: 0; padding: 28px; border-radius: 22px; background: var(--creme); display: flex; flex-direction: column; gap: 18px }
+  .depo blockquote { margin: 0; font: 300 20px/1.4 var(--display) }
+  .depo figcaption { font-size: 14px; color: var(--suave) }
+  @media (max-width: 860px) { .depo-grid { grid-template-columns: 1fr } }
+
+  /* FAQ */
+  #duvidas { padding-top: 0 }
+  .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(28px, 5vw, 72px) }
+  .faq-intro { margin-top: 22px; color: var(--suave); max-width: 40ch }
+  details { border-bottom: 1px solid #e1d6cb }
+  summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; padding: 20px 0; font: 400 20px/1.3 var(--display) }
+  summary::-webkit-details-marker { display: none }
+  summary::after { content: "+"; font: 300 26px/1 var(--body); color: var(--coral); transition: transform .2s }
+  details[open] summary::after { transform: rotate(45deg) }
+  details p { padding: 0 0 20px; color: var(--suave); max-width: 62ch }
+  @media (max-width: 820px) { .faq-grid { grid-template-columns: 1fr } }
+
+  /* fecho com a assinatura completa */
+  .fecho { padding-top: 0 }
+  .fecho-bloco { background: var(--coral); color: var(--texto); border-radius: var(--r); padding: clamp(56px, 9vw, 120px) clamp(24px, 5vw, 64px); display: grid; justify-items: center; text-align: center }
+  .fecho-logo { width: min(100%, 560px) }
+  .fecho-frase { margin-top: 40px; font: 300 clamp(26px, 3.4vw, 40px)/1.25 var(--display); max-width: 22ch; text-wrap: balance }
+  .fecho .ctas { justify-content: center }
+  .fecho-info { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 48px; margin-top: 48px; font-size: 15px; color: rgba(18, 48, 58, .9) }
+  .fecho-info small { display: block; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; opacity: .75; margin-bottom: 4px }
+
+  /* foto placeholder */
+  .foto { position: absolute; inset: 0; display: flex; align-items: flex-end; padding: 18px; background: repeating-linear-gradient(135deg, transparent 0 14px, rgba(18, 67, 83, .05) 14px 15px), var(--areia) }
+  .foto span { font-size: 12px; line-height: 1.4; color: var(--texto); background: rgba(255, 251, 247, .88); padding: 8px 12px; border-radius: 12px; max-width: 28ch }
+
+  /* rodapé */
+  footer { background: var(--petroleo); color: rgba(255, 251, 247, .72); padding: 48px 0 110px; font-size: 14px }
+  .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: center }
+  .foot .assin { display: flex; gap: 16px; align-items: center }
+  .foot .assin img { height: 40px; width: auto }
+  .foot .assin b { display: block; font: 400 19px/1.2 var(--display); color: var(--creme) }
+  .foot nav { display: flex; gap: 20px; flex-wrap: wrap }
+
+  .fixo { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 30; display: none }
+  .fixo .btn { width: 100%; justify-content: center; box-shadow: 0 10px 30px rgba(18, 48, 58, .25) }
+  @media (max-width: 700px) { .fixo { display: block } }
+
+/* celular: o símbolo desce para baixo dos botões, inteiro e legível, sem passar pelo texto */
+@media (max-width:760px){
+  .hero{padding-bottom:86vw}
+  .hero-simbolo{width:112vw;right:-34vw;top:auto;bottom:-22vw;opacity:1}
+}
+
+  /* menos texto: selos de formação, um depoimento grande, etapas só com título */
+  .credenciais { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px }
+  .credenciais li { background: var(--creme); border-radius: 99px; padding: 10px 16px; font-size: 14.5px; color: var(--petroleo) }
+  @media (min-width: 861px) { .etapas { gap: clamp(64px, 13vh, 130px) } }
+  .etapas h3 { margin-bottom: 0; font-size: clamp(32px, 3.6vw, 46px) }
+  .post h3 { font-size: clamp(24px, 2.3vw, 31px) }
+  .citacao-sub { position: relative; margin-top: 22px; font-size: 18px; max-width: 40ch }
+  .depo .depo-um { background: none; padding: 0; margin: 0 auto; max-width: 900px; text-align: center; display: grid; justify-items: center; gap: 22px }
+  .depo-simbolo { width: 84px }
+  .depo-um blockquote { margin: 0; font: 300 clamp(28px, 3.6vw, 46px)/1.25 var(--display); text-wrap: balance }
+  .depo-um figcaption { font-size: 15px; color: var(--suave) }
+  .depo-um .aviso { margin-top: 0 }
+}
