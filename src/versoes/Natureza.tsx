@@ -137,7 +137,7 @@ export default function Natureza() {
           <Simbolo cor={COR.creme} modo="carga" className="hero-simbolo" />
           <div className="wrap hero-grid">
             <div className="txt">
-              <p className="eyebrow">Pediatra e Neonatologista · {contato.cidade}</p>
+              <p className="eyebrow">Pediatra e Neonatologista<span className="eyebrow-cidade"> · {contato.cidade}</span></p>
               <h1>Mais escuta, <em>menos remédio.</em></h1>
               <p className="lead">Da gestação ao crescimento, com ciência e tempo para ouvir.</p>
               <div className="ctas">

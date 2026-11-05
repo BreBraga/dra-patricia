@@ -273,4 +273,30 @@ footer{background:var(--profunda-esc);color:rgba(251,246,238,.7);padding:0 0 110
 .abord h2,.abord h2 em{color:var(--profunda-esc)}
 .abord-simbolo{opacity:.22}
 .pilares li{border:0;background:var(--creme);color:var(--profunda-esc)}
+/* celular: topo mais curto, selos numa linha só, botões com a mesma largura, menos respiro vazio */
+@media (max-width:560px){
+  section{padding:64px 0}
+  .hero{padding-top:108px}
+  .hero .eyebrow{font-size:11px;letter-spacing:.18em;margin-bottom:16px}
+  .eyebrow-cidade{display:none} /* a cidade não cabe numa linha; segue no contato e no rodapé */
+  .hero h1{font-size:clamp(44px,12.5vw,54px)}
+  .hero .lead{margin-top:18px;font-size:17px}
+  .hero .ctas{flex-direction:column;margin-top:28px}
+  .hero .ctas .btn{justify-content:center}
+  .selos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:32px;font-size:12px;line-height:1.35}
+  .selos b{font-size:28px}
+  .hero-simbolo{width:120%;right:-48%;top:22%;transform:none}
+  .arco{max-width:none;aspect-ratio:1/1.02;margin-top:40px}
+  .manifesto{padding:56px 0}
+  .manifesto-simbolo{width:72px;margin-bottom:22px}
+  .manifesto p{font-size:28px}
+  .fotos-sobre{padding-bottom:40px}
+  .tempo-simbolo{width:44%;margin-top:20px}
+  .etapas{margin-top:8px;gap:28px}
+  .etapas h3{font-size:28px}
+  .arco-iris{width:82%;margin:0 auto}
+  .contato .ctas{flex-direction:column}
+  .contato .ctas .btn{justify-content:center}
+}
+.eyebrow-cidade{margin-left:-5px} /* compensa o gap do flex, que é maior que um espaço */
 }
