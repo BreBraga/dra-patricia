@@ -27,8 +27,9 @@ h3{font-size:24px;font-weight:400;font-variation-settings:"opsz" 36,"SOFT" 100}
 em{font-style:italic}
 p{margin:0}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.eyebrow{font:500 12px/1 var(--body);letter-spacing:.28em;text-transform:uppercase;color:var(--profunda);margin:0 0 18px;display:flex;align-items:center;gap:12px}
-.eyebrow::before{content:"";width:28px;height:1.5px;background:var(--mostarda)}
+.eyebrow{font:500 12px/1.4 var(--body);letter-spacing:.28em;text-transform:uppercase;color:var(--profunda);margin:0 0 18px;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";flex:none;width:28px;height:1.5px;background:var(--mostarda)}
+@media (max-width:400px){.eyebrow{letter-spacing:.18em;gap:10px}.eyebrow::before{width:20px}}
 .eyebrow-cidade{margin-left:-5px} /* compensa o gap do flex, que é maior que um espaço */
 section{padding:clamp(72px,10vw,124px) 0}
 .sem-topo{padding-top:0}
@@ -65,7 +66,7 @@ header{position:absolute;top:0;left:0;right:0;z-index:20}
 .hero h1,.hero .lead,.hero .ctas,.selos{animation:site-surge .9s cubic-bezier(.2,.7,.2,1) both}
 .hero .lead{animation-delay:.12s}.hero .ctas{animation-delay:.22s}.selos{animation-delay:.32s}
 .hero .arco{animation:site-abre 1.2s cubic-bezier(.6,.1,.2,1) both .1s}
-@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.arco{width:100%;max-width:380px;margin:0 auto;aspect-ratio:4/4.4}.hero .txt{padding-bottom:0}}
+@media (max-width:700px){.hero-grid{grid-template-columns:1fr}.arco{width:100%;max-width:420px;margin:0 auto;aspect-ratio:4/4.4}.hero .txt{padding-bottom:0}}
 
 /* moldura de foto (componente Foto) */
 .foto{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding:22px;
@@ -181,10 +182,11 @@ button.sv-cartao{font:inherit;text-align:left;width:100%;cursor:pointer;-webkit-
 .trilho::-webkit-scrollbar{display:none}
 .slide{scroll-snap-align:start;position:relative}
 .carrossel-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:18px}
-.carrossel-nav>button{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--profunda);background:none;color:var(--profunda);font:400 18px/1 var(--body);cursor:pointer;transition:background .2s,color .2s,opacity .2s}
+.carrossel-nav>button{flex:none;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--profunda);background:none;color:var(--profunda);font:400 18px/1 var(--body);cursor:pointer;transition:background .2s,color .2s,opacity .2s}
 .carrossel-nav>button:hover:not(:disabled){background:var(--profunda);color:var(--creme)}
 .carrossel-nav>button:disabled{opacity:.3;cursor:default}
-.pontos{display:flex;align-items:center;gap:8px}
+.pontos{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;min-width:0}
+@media (max-width:400px){.carrossel-nav{gap:10px}.pontos{gap:6px}.pontos button{width:7px;height:7px}.pontos button.ativo{width:20px}}
 .pontos button{width:9px;height:9px;padding:0;border-radius:99px;border:0;background:rgba(var(--profunda-rgb),.25);cursor:pointer;transition:width .3s,background .3s}
 .pontos button.ativo{width:26px;background:var(--mostarda)}
 .pontos .pausar{width:auto;height:auto;margin-left:6px;padding:4px 8px;background:none;color:var(--profunda);font-size:11px;letter-spacing:-.1em;border-radius:6px}
@@ -259,11 +261,33 @@ footer{background:var(--profunda-esc);color:rgba(251,246,238,.7);padding:0 0 110
 .foot .assin{display:flex;gap:16px;align-items:center}
 .foot .assin img{height:40px;width:auto}
 .foot .assin b{display:block;font:400 19px/1.2 var(--display);color:var(--creme)}
-.foot nav{display:flex;gap:20px;flex-wrap:wrap}
+.foot nav{display:flex;gap:4px 20px;flex-wrap:wrap}
+.foot nav a{display:inline-block;padding:10px 0}
 .fixo{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;display:none}
 .fixo .btn{width:100%;justify-content:center;box-shadow:0 10px 30px rgba(var(--profunda-esc-rgb),.3)}
 @media (max-width:700px){.fixo{display:block}}
 
+/* tablet (561 a 1000px): aproveita a largura em vez de empilhar tudo à esquerda */
+@media (max-width:860px){.eyebrow-cidade{display:none}}
+@media (min-width:701px) and (max-width:860px){
+  .hero{padding-top:130px}
+  .hero-grid{grid-template-columns:1.05fr .95fr;gap:28px}
+  .hero h1{font-size:clamp(46px,7vw,60px)}
+  .hero .lead{font-size:17px}
+  .hero .ctas{flex-direction:column;align-items:stretch}
+  .hero .ctas .btn{justify-content:center}
+  .selos{gap:18px}
+  .arco{aspect-ratio:3/4.2}
+}
+@media (min-width:561px) and (max-width:860px){
+  .fotos-sobre{margin:0 auto;width:min(100%,520px)}
+  .tempo-simbolo{width:min(38%,260px)}
+  .consult-foto{margin:0 auto;width:min(100%,480px)}
+  .fecho-info{gap:16px 32px}
+}
+@media (min-width:561px) and (max-width:1000px){
+  .sv-pequeno{min-height:170px}
+}
 /* celular: topo mais curto, selos numa linha só, botões com a mesma largura, menos respiro vazio */
 @media (max-width:560px){
   section{padding:64px 0}

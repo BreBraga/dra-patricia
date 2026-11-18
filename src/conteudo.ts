@@ -8,7 +8,8 @@ export const contato = {
   endereco: 'Rua Exemplo, 000 · Volta Redonda, RJ', // PENDENTE
   enderecoCurto: 'Rua Exemplo, 000 · Volta Redonda', // PENDENTE
   horarios: 'Segunda a sexta, 8h às 18h', // PENDENTE
-  instagram: 'https://instagram.com/', // PENDENTE
+  instagram: 'https://www.instagram.com/dra.patriciamartins_pediatra/',
+  lattes: 'https://lattes.cnpq.br/1804276479902113', // tirado do Linktree dela em 18/11/2026
   googleAvaliacoes: 'https://www.google.com/search?q=Dra.+Patr%C3%ADcia+Martins+pediatra+Volta+Redonda#lrd=0x9e99b02661e90d:0x7fd84e61b4a357eb,1,,,,', // abre direto nas avaliações
   crm: 'CRM-RJ 00000', // PENDENTE
   rqe: 'RQE 00000', // PENDENTE
