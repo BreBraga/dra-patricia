@@ -3,11 +3,18 @@ import { contato, faq, linkWhatsApp, menu } from '../conteudo'
 
 /** Moldura de foto. Com src mostra a foto (por enquanto, tiradas do Instagram dela);
  *  sem src fica o espaço reservado, com a legenda do que entra ali. */
-export function Foto({ legenda, src, posicao }: { legenda: string; src?: string; posicao?: string }) {
+export function Foto({ legenda, src, posicao, prioridade }: {
+  legenda: string
+  src?: string
+  posicao?: string
+  /** foto do topo: carrega já, com prioridade, em vez de esperar a rolagem */
+  prioridade?: boolean
+}) {
   if (src) {
     return (
       <div className="foto foto-real">
-        <img src={src} alt={legenda} loading="lazy" style={posicao ? { objectPosition: posicao } : undefined} />
+        <img src={src} alt={legenda} loading={prioridade ? 'eager' : 'lazy'} fetchPriority={prioridade ? 'high' : undefined}
+          style={posicao ? { objectPosition: posicao } : undefined} />
       </div>
     )
   }

@@ -1,9 +1,8 @@
-/* Base comum às versões. Cada versão define suas cores e fontes no próprio arquivo (.v-*). */
+/* Base global. Cores, fontes e seções ficam em site.css (.site). */
 *, *::before, *::after { box-sizing: border-box }
 html { scroll-behavior: smooth; scroll-padding-top: 90px }
 body { margin: 0; -webkit-font-smoothing: antialiased }
 dd { margin: 0 }
-ol.passos, ol.linha { list-style: none; margin: 0; padding: 0 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto }
@@ -27,7 +26,7 @@ ol.passos, ol.linha { list-style: none; margin: 0; padding: 0 }
   .simbolo .ponto { opacity: 1 !important }
 }
 
-/* Ações do topo e menu no celular. As cores vêm de --mm-* em cada versão. */
+/* Ações do topo e menu no celular. As cores vêm de --mm-* em site.css. */
 .nav-acoes { display: flex; align-items: center; gap: 10px }
 .menu-btn {
   display: none; font: 500 14px/1 var(--body); letter-spacing: .06em;
@@ -54,29 +53,7 @@ ol.passos, ol.linha { list-style: none; margin: 0; padding: 0 }
 }
 
 body.menu-aberto { overflow: hidden }
-body.menu-aberto .fixo, body.menu-aberto .seletor { display: none !important }
-
-/* Seletor de versão (só para a apresentação) */
-.seletor {
-  position: fixed; left: 16px; bottom: 16px; z-index: 50;
-  display: flex; gap: 4px; padding: 4px; border-radius: 999px;
-  background: rgba(18, 48, 58, .92); backdrop-filter: blur(8px);
-  box-shadow: 0 8px 24px rgba(18, 48, 58, .25);
-  font: 500 12.5px/1 "Jost", system-ui, sans-serif;
-}
-.seletor button {
-  border: 0; cursor: pointer; padding: 9px 13px; border-radius: 999px;
-  background: transparent; color: rgba(255, 251, 247, .75); font: inherit; letter-spacing: .02em;
-}
-.seletor button:hover { color: #fffbf7 }
-.seletor button[aria-pressed="true"] { background: #fffbf7; color: #12303a }
-.seletor .seletor-toggle { padding: 9px 12px; font-size: 14px }
-.seletor button:focus-visible { outline: 2px solid #E89012; outline-offset: 2px }
-@media (max-width: 700px) {
-  .seletor { bottom: 80px; left: 12px; right: 12px; justify-content: space-between; overflow-x: auto }
-  .seletor.recolhido { right: auto }
-  .seletor button { padding: 9px 10px; white-space: nowrap }
-}
+body.menu-aberto .fixo { display: none !important }
 
 /* Foto real dentro das molduras (componente Foto com src) */
 .foto.foto-real { padding: 0; background: #DFD3C8 }

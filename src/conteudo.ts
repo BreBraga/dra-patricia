@@ -9,6 +9,7 @@ export const contato = {
   enderecoCurto: 'Rua Exemplo, 000 · Volta Redonda', // PENDENTE
   horarios: 'Segunda a sexta, 8h às 18h', // PENDENTE
   instagram: 'https://instagram.com/', // PENDENTE
+  googleAvaliacoes: 'https://www.google.com/search?q=Dra.+Patr%C3%ADcia+Martins+pediatra+Volta+Redonda#lrd=0x9e99b02661e90d:0x7fd84e61b4a357eb,1,,,,', // abre direto nas avaliações
   crm: 'CRM-RJ 00000', // PENDENTE
   rqe: 'RQE 00000', // PENDENTE
   cidade: 'Volta Redonda', // PENDENTE: confirmar cidades no site e no Google
@@ -31,7 +32,7 @@ export const menu = [
 export const sobre = {
   paragrafos: [
     'Sou uma mulher movida por intuição, observação, sonhos e ações. Na vida pessoal, sou mãe do Miguel e da Marina e esposa do Rodrigo.',
-    'Há 16 anos me dedico à pediatria. Minha prática é fundamentada em uma medicina que valoriza o ser humano em sua integralidade.',
+    'Há 20 anos me dedico à pediatria. Minha prática é fundamentada em uma medicina que valoriza o ser humano em sua integralidade.',
     'Minha missão é construir uma parceria sólida com você na jornada da parentalidade, oferecendo um cuidado consciente, empático e que traga leveza para o dia a dia da sua família.',
     'Acredito que cuidar pode ser leve e satisfatório, e que posso ser sua rede de apoio, junto a uma excelente equipe multidisciplinar. Seja bem-vindo(a)!',
   ],
@@ -41,10 +42,7 @@ export const sobre = {
     { titulo: 'Capacitação', texto: 'Diretrizes de Reanimação Neonatal da SBP (termo e prematuro)' },
     { titulo: 'Ensino', texto: 'Professora assistente de Saúde da Criança e do Adolescente, Universidade de Vassouras' },
   ],
-  /** Versões curtas da formação, para selos (B e C). */
-  credenciais: ['Pediatria e Neonatologia', 'Mestrado IFF/Fiocruz', 'Reanimação neonatal SBP', 'Professora na Univ. de Vassouras'],
 }
-
 
 export type Servico = {
   slug: string
@@ -89,11 +87,18 @@ export const consultorio = [
   'No lúdico, a criança se sente à vontade, a conversa com os pais fica mais leve e o cuidado se torna uma experiência positiva.',
 ]
 
-// ILUSTRATIVOS: substituir pelos depoimentos reais, com autorização por escrito.
+// Avaliações reais do Google (perfil "Dra. Patricia Martins Pinto - Pediatria e Neonatologia", nota 5,0 em 32
+// avaliações), copiadas em 16/11/2026. Alguns são trechos, com ajustes mínimos de pontuação e grafia;
+// de quem escreveu, só o primeiro nome e a inicial.
 export const depoimentos = [
-  { texto: 'Saímos do pré-natal pediátrico sabendo exatamente o que esperar da primeira hora do nosso filho.', quem: 'Mãe do Davi', idade: '4 meses' },
-  { texto: 'Ela senta no chão com a Laura e explica cada marco. A consulta virou um momento que a gente espera.', quem: 'Pais da Laura', idade: '2 anos' },
-  { texto: 'Moramos fora e a telemedicina mantém o acompanhamento com a mesma pediatra desde o nascimento.', quem: 'Família do Theo', idade: '1 ano' },
+  { quem: 'Gleice C.', texto: 'Dra Patrícia, é diferente de todos os médicos que já tive alguma interação, ela é atenciosa, humana… mesmo sendo pediatra ela olha para mãe, para a família, isso não há dinheiro que pague. Nunca vou esquecer no dia que cheguei em seu consultório quando minha filha tinha 7 dias de vida e estava sofrendo com amamentação e prestes a desistir, porque não aguentava mais as dores, e ela me ajudou muito em tudo! E hoje amamento a quase 2 anos.' },
+  { quem: 'Gabi B.', texto: 'Dra Patrícia se tornou parte da nossa família enquanto meu filho ainda estava na minha barriga. Foi impossível não escolhê-la depois de tanto carinho com nossa família. É lindo ver o amor dela pela o que faz e o carinho e a entrega no cuidado dos pequenos.' },
+  { quem: 'Thaina L.', texto: 'Dra Patrícia é um anjo em nossas vidas! Atenciosa, carinhosa, humana e mãe. Em todos os desesperos nos atende, e é extremamente assertiva. Foi minha pediatra na sala de parto, e nunca vou esquecer de tão atenciosa que foi comigo!' },
+  { quem: 'Raphaelly G.', texto: 'A dra Patrícia tem um lugar especial no coração da nossa família. Médica super competente, humana, amorosa e, principalmente, traz uma leveza para a minha maternidade que nunca encontrei em nenhum outro profissional.' },
+  { quem: 'Emilia D.', texto: 'Atenciosa e sabe lidar com crianças, o que infelizmente muitos pediatras se esquecem ao longo da carreira! Meu filho ficou tranquilo durante todo o atendimento, que foi minucioso e acolhedor! Ela está atualizada profissionalmente e interessada no paciente, que é um diferencial!' },
+  { quem: 'Ana Carolina A.', texto: 'Cuida dos nossos pequenos com tanto amor, carinho e dedicação que nos traz uma segurança enorme. As consultas são uma aula, que nos nutre de muita informação e conhecimento para darmos o nosso melhor pelas nossas crianças.' },
+  { quem: 'Lucas B.', texto: 'Dra Patrícia consegue aliar com maestria o atendimento competente ao acolhimento humanizado da criança e de toda a família. O espaço é tão agradável que minha filha pede para ir até na consulta do irmão. Recomendo fortemente!' },
+  { quem: 'Paola B.', texto: 'As consultas são sempre na hora marcada, são consultas assertivas, humanizadas, com muito amor e carinho. Dra. Patrícia é sem dúvidas a melhor pediatra da região, tem todo nosso respeito e gratidão.' },
 ]
 
 export const faq = [
@@ -106,5 +111,3 @@ export const faq = [
   { p: 'A partir de que idade?', r: 'A partir de 1 mês de vida. A telemedicina pode ser intercalada com consultas presenciais.' },
   { p: 'Com que frequência levar meu filho à puericultura?', r: 'Mensalmente no 1º ano, com menor frequência entre 1 e 2 anos, e ao menos uma vez por ano depois dos 2 anos.' },
 ]
-
-export const onlineFunciona = ['Pré-natal pediátrico', 'Introdução alimentar', 'Amamentação', 'Homeopatia']

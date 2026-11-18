@@ -1,17 +1,16 @@
 # Dra. Patrícia Martins · Landing page
 
-Exemplos de landing page para a Dra. Patrícia Martins, Pediatra e Neonatologista (Volta Redonda, RJ).
+Landing page da Dra. Patrícia Martins, Pediatra e Neonatologista (Volta Redonda, RJ).
 Projeto da Linkeed em React + Vite + TypeScript.
 
-## Versões
+## Estrutura
 
-Um único app com três propostas, trocadas pelo parâmetro `?v=` (ou pelo seletor no canto da tela):
+- `src/App.tsx`: a página, seção por seção (estrutura do documento da cliente de 16/11/2026).
+- `src/site.css`: cores, tipografia e layout. `src/index.css`: base global, símbolo animado e menu do celular.
+- `src/conteudo.ts`: todos os textos e dados de contato.
+- `src/components/`: foto, carrossel, dúvidas, menu e rodapé. `src/marca/`: símbolo da marca com o traço animado.
 
-| Parâmetro | Versão |
-|---|---|
-| `?v=a` | A · Marca |
-| `?v=b` | B · Natureza |
-| `?v=c` | C · O traço |
+As propostas anteriores (A · Marca, B · Natureza, C · O traço) estão no histórico do Git, no commit `6dd84f1`.
 
 ## Rodar
 
@@ -24,6 +23,9 @@ npm run preview  # serve o build em http://localhost:4173
 
 ## Pendências
 
-- Dados de contato, CRM/RQE, endereço e horários são provisórios (marcados `PENDENTE` em `src/conteudo.ts`).
-- As fotos em `public/fotos/` são provisórias, tiradas do Instagram da Dra. Patrícia. Trocar pelos originais das sessões de foto.
+- Dados de contato, CRM/RQE, endereço, horários e link das avaliações no Google são provisórios (marcados `PENDENTE` em `src/conteudo.ts`).
+- Fotos: topo, Sobre e galeria já são as enviadas pela cliente (originais em `../Fotos`). Falta a foto de cada serviço; `maos-bebe-quadrada.jpg` (círculo do Sobre) ainda é do Instagram.
+- Fotos com rosto de criança ou paciente precisam de autorização por escrito (regras do CFM).
+- Elemento que substitui o arco-íris no consultório: a definir com a cliente.
+- Com o domínio: `og:url`, `og:image`, canonical e dados estruturados (`index.html`).
 - Depoimentos são ilustrativos. Imagens com pacientes e depoimentos precisam de autorização por escrito (regras do CFM).
