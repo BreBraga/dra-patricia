@@ -1,19 +1,17 @@
 // Conteúdo único das landings. Tudo vem do briefing de 28/10/2026.
-// Itens marcados com PENDENTE ainda não foram enviados pela cliente.
 // A Clínica Vínculo não aparece no site (decisão de 03/11/2026).
 
 export const contato = {
-  whatsapp: '5524000000000', // PENDENTE: número de agendamento
-  whatsappExibicao: '(24) 00000-0000', // PENDENTE
-  endereco: 'Rua Exemplo, 000 · Volta Redonda, RJ', // PENDENTE
-  enderecoCurto: 'Rua Exemplo, 000 · Volta Redonda', // PENDENTE
-  horarios: 'Segunda a sexta, 8h às 18h', // PENDENTE
+  whatsapp: '5524992252662', // WhatsApp de agendamento, enviado pela cliente em 25/11/2026
+  whatsappExibicao: '(24) 99225-2662',
+  endereco: 'Rua 18-B, 23, sala 302 · Vila Santa Cecília, Volta Redonda, RJ', // do link do Google enviado em 25/11/2026
+  enderecoCurto: 'Rua 18-B, 23 · Vila Santa Cecília',
+  horarios: 'Segunda a sexta, 8h às 18h', // confirmado pela cliente em 25/11/2026 (sábado e domingo fechado)
   instagram: 'https://www.instagram.com/dra.patriciamartins_pediatra/',
   lattes: 'https://lattes.cnpq.br/1804276479902113', // tirado do Linktree dela em 18/11/2026
   googleAvaliacoes: 'https://www.google.com/search?q=Dra.+Patr%C3%ADcia+Martins+pediatra+Volta+Redonda#lrd=0x9e99b02661e90d:0x7fd84e61b4a357eb,1,,,,', // abre direto nas avaliações
-  crm: 'CRM-RJ 00000', // PENDENTE
-  rqe: 'RQE 00000', // PENDENTE
-  cidade: 'Volta Redonda', // PENDENTE: confirmar cidades no site e no Google
+  crm: 'CRM-RJ 52820822',
+  cidade: 'Volta Redonda',
 }
 
 export function linkWhatsApp(mensagem?: string) {
@@ -33,7 +31,7 @@ export const menu = [
 export const sobre = {
   paragrafos: [
     'Sou uma mulher movida por intuição, observação, sonhos e ações. Na vida pessoal, sou mãe do Miguel e da Marina e esposa do Rodrigo.',
-    'Há 20 anos me dedico à pediatria. Minha prática é fundamentada em uma medicina que valoriza o ser humano em sua integralidade.',
+    'Há 18 anos me dedico à pediatria. Minha prática é fundamentada em uma medicina que valoriza o ser humano em sua integralidade.',
     'Minha missão é construir uma parceria sólida com você na jornada da parentalidade, oferecendo um cuidado consciente, empático e que traga leveza para o dia a dia da sua família.',
     'Acredito que cuidar pode ser leve e satisfatório, e que posso ser sua rede de apoio, junto a uma excelente equipe multidisciplinar. Seja bem-vindo(a)!',
   ],

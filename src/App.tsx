@@ -59,7 +59,7 @@ export default function App() {
                 <a className="btn btn-creme" href="#telemedicina">Consulta online</a>
               </div>
               <div className="selos">
-                <div><b>20</b>anos de pediatria</div>
+                <div><b>18</b>anos de pediatria</div>
                 <div><b>CRM</b>{registro}</div>
                 <div><b>IFF</b>Mestrado Fiocruz</div>
               </div>

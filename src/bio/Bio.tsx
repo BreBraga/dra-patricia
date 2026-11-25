@@ -8,7 +8,6 @@ import { Simbolo } from '../marca/Simbolo'
 
 const COR = { coral: '#E98456', mostarda: '#E89012', verde: '#105140', petroleo: '#124353' }
 
-// PENDENTE: com o endereço real, o "Como chegar" passa a apontar para o consultório
 const mapa = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contato.endereco)}`
 
 const LINKS = [
@@ -29,7 +28,7 @@ export default function Bio() {
           </div>
           <p className="bio-eyebrow">Pediatra e Neonatologista</p>
           <h1>Dra. Patrícia <em>Martins</em></h1>
-          <p className="bio-linha">20 anos de pediatria · {contato.cidade}</p>
+          <p className="bio-linha">18 anos de pediatria · {contato.cidade}</p>
         </header>
 
         <a className="bio-agendar" href={linkWhatsApp('Olá! Gostaria de agendar uma consulta.')} target="_blank" rel="noopener noreferrer">
@@ -54,7 +53,7 @@ export default function Bio() {
 
         <footer className="bio-rodape">
           <img src="/marca/logo-creme.svg" alt="Patrícia Martins · Pediatria & Neonatologia" />
-          <p>{contato.crm} · {contato.rqe}</p>
+          <p>{contato.crm}</p>
         </footer>
       </main>
     </div>

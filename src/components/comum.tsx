@@ -104,7 +104,7 @@ export function Rodape({ simbolo }: { simbolo: string }) {
           <img src={`/marca/${simbolo}.svg`} alt="" />
           <div>
             <b>Dra. Patrícia Martins</b>
-            Pediatria &amp; Neonatologia · {contato.crm} · {contato.rqe}
+            Pediatria &amp; Neonatologia · {contato.crm}
           </div>
         </div>
         <nav aria-label="Rodapé">
