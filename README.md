@@ -17,7 +17,7 @@ As propostas anteriores (A · Marca, B · Natureza, C · O traço) estão no his
 ```bash
 npm install
 npm run dev      # desenvolvimento
-npm run build    # gera dist/
+npm run build    # gera dist/ com o HTML já renderizado, JSON-LD, robots.txt (e sitemap com SITE_URL)
 npm run preview  # serve o build em http://localhost:4173
 ```
 
@@ -27,5 +27,5 @@ npm run preview  # serve o build em http://localhost:4173
 - Fotos: topo, Sobre e galeria já são as enviadas pela cliente (originais em `../Fotos`). Falta a foto de cada serviço; `maos-bebe-quadrada.jpg` (círculo do Sobre) ainda é do Instagram.
 - Fotos com rosto de criança ou paciente precisam de autorização por escrito (regras do CFM).
 - Elemento que substitui o arco-íris no consultório: a definir com a cliente.
-- Com o domínio: `og:url`, `og:image`, canonical e dados estruturados (`index.html`).
+- Domínio: quando existir, buildar com `SITE_URL=https://dominio npm run build` (na Vercel, variável de ambiente `SITE_URL`). Sem ele ficam de fora canonical, `og:url`, `og:image` e o `sitemap.xml`.
 - Depoimentos são ilustrativos. Imagens com pacientes e depoimentos precisam de autorização por escrito (regras do CFM).
