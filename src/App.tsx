@@ -225,17 +225,12 @@ export default function App() {
                 <a className="btn btn-creme-cheio" href={linkWhatsApp()}>Agende sua consulta</a>
                 <a className="btn btn-linha-escura" href="#telemedicina">Consulta online</a>
               </div>
-              <div className="fecho-info">
-                <div><small>WhatsApp</small>{contato.whatsappExibicao}</div>
-                <div><small>Endereço</small>{contato.endereco}</div>
-                <div><small>Horários</small>{contato.horarios}</div>
-              </div>
             </div>
           </div>
         </section>
       </main>
 
-      <Rodape simbolo="simbolo-creme" />
+      <Rodape />
       <CtaFixo classeBotao="btn-mostarda" />
     </div>
   )
